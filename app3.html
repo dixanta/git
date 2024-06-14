@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="table-template"></div>
+
+    <script>
+        let table=document.createElement('table');
+        table.border=1;
+        let tr=document.createElement('tr');
+        for(let i=1;i<=100;i++){
+            let td=document.createElement('td');
+            td.innerHTML=i;
+            tr.appendChild(td);
+            
+        }
+        table.appendChild(tr);
+        
+        document.getElementById('table-template')
+        .append(table);
+
+    </script>
+</body>
+</html>

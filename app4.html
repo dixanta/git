@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ball{
+            height: 100px;
+            width: 100px;
+            background: green;
+            border: 5px solid blue;
+            border-radius: 50%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="ball"></div>
+    <script>
+        let $ball = document.getElementById('ball');
+        let ballLeft=$ball.offsetLeft;
+        let ballTop=$ball.offsetTop;
+        setInterval(()=>{
+            $ball.style.left=ballLeft +'px';
+            ballLeft +=5;
+
+            $ball.style.top=ballTop +'px';
+            ballTop +=3;
+
+            if(ballTop<document.body.offsetHeight){
+                ballTop=1;
+            }
+        },100);
+    </script>
+</body>
+</html>
