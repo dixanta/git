@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ball {
+            height: 100px;
+            width: 100px;
+            background: green;
+            border: 5px solid blue;
+            border-radius: 50%;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ball"></div>
+    <script>
+        window.onload = function (e) {
+            let $ball = document.getElementById('ball');
+            let ballLeft = $ball.offsetLeft;
+            let ballWidth=$ball.offsetWidth;
+            let screenWidth = document.body.offsetWidth;
+            
+            let moveLeft = true;
+            setInterval(() => {
+                if (moveLeft) {
+                    ballLeft += 5;
+                }else{
+                    ballLeft -=5;
+                }
+                $ball.style.left = ballLeft + 'px';
+
+                if (ballLeft >=(screenWidth-ballWidth)) {
+                    moveLeft = false;
+                }
+                if(ballLeft <=0){
+                    moveLeft=true;
+                }
+            }, 10);
+        }
+
+    </script>
+</body>
+
+</html>
