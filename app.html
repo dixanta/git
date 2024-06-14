@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App</title>
-
+   <style>
+     body{
+        margin:0;
+        padding:0;
+        text-align:center;
+    }
+   </style>
 </head>
+<body style="background-color: green;">
+    <div id="quote"></div>    
 
-<body>
-    <script>
-        function generateColomns(col,sep) {
-            for (let i = 1; i <= col; i++) {
-                document.write(`<td style="background:${(i%sep==0)?'red':''}">${i}</td>`);
-                if (i % sep == 0) {
-                    document.write('</tr><tr>');
-                }
-            }
+
+ <script>
+    let colors=['red','black','orange','purple','lime'];
+    let quotes=['Be Good Do Good','Have a Great Day','Believe in yourself','Dont Speak Evil'];
+    let i=0;
+    setInterval(()=>{
+        document.body.style.backgroundColor=colors[i];
+        i++;
+        if(i==colors.length){
+            i=0;    
         }
-    </script>
-    <table border="1">
-        <tr>
-            <script>
-                //document.onload=()=>{
-                    generateColomns(30,7);
-                //}
-                
-            </script>
-        </tr>
-    </table>
+    },500);
+    j=0;
+    setInterval(()=>{
+        if(j==quotes.length){
+            j=0;    
+        }
+        document.getElementById('quote').innerHTML=(`<h1 style="font-size:100px;color:white">${quotes[j]}</h1>`);
+        j++;
+        
+    },1000);
 
 
+ </script>   
 </body>
-
 </html>
